@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Riona - Cinta dari Gibran</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --soft-cream: #faf6f1;
+            --warm-beige: #f0ebe3;
+            --dusty-rose: #d4a8a8;
+            --deep-mauve: #9a7b7b;
+            --charcoal: #3a3a3a;
+            --light-gold: #e8d2b0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--soft-cream);
+            color: var(--charcoal);
+            line-height: 1.7;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            padding: 80px 0 40px;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid var(--light-gold);
+            margin-bottom: 60px;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 2px;
+            background: var(--dusty-rose);
+        }
+
+        .main-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.8rem;
+            font-weight: 500;
+            color: var(--deep-mauve);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--deep-mauve);
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            margin: 60px 0;
+            position: relative;
+        }
+
+        .hero-photo {
+            width: 100%;
+            height: 500px;
+            background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), 
+                              url('https://imgur.com/gallery/riona-Md7vstY');
+            background-size: cover;
+            background-position: center;
+            border-radius: 2px;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(154, 123, 123, 0.1);
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            background: rgba(58, 58, 58, 0.7);
+            padding: 8px 15px;
+            border-radius: 2px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(2px);
+        }
+
+        /* Couple Info */
+        .couple-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 70px 0;
+        }
+
+        @media (max-width: 768px) {
+            .couple-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .person-card {
+            padding: 40px;
+            background: var(--warm-beige);
+            border-radius: 2px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .person-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .person-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            color: var(--deep-mauve);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .person-nickname {
+            color: var(--dusty-rose);
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .person-details {
+            margin-top: 25px;
+        }
+
+        .detail-item {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            color: var(--charcoal);
+        }
+
+        .detail-item i {
+            margin-right: 10px;
+            color: var(--dusty-rose);
+            width: 20px;
+        }
+
+        /* Story Section */
+        .story-section {
+            margin: 80px 0;
+            padding: 50px;
+            background: var(--warm-beige);
+            position: relative;
+            border-radius: 2px;
+        }
+
+        .story-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--deep-mauve);
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .story-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .highlight-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--deep-mauve);
+            text-align: center;
+            margin: 40px auto;
+            padding: 30px;
+            border-left: 2px solid var(--dusty-rose);
+            max-width: 700px;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        /* Date Section */
+        .date-section {
+            text-align: center;
+            margin: 60px 0;
+            padding: 30px;
+            position: relative;
+        }
+
+        .date-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--deep-mauve);
+            display: inline-block;
+            padding: 20px 40px;
+            border: 1px solid var(--light-gold);
+            background: var(--soft-cream);
+        }
+
+        /* Message Section */
+        .message-section {
+            margin: 80px 0;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, var(--warm-beige) 0%, #f8f4ee 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .message-section::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 12rem;
+            color: var(--dusty-rose);
+            opacity: 0.1;
+            line-height: 1;
+        }
+
+        .message-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .message-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            color: var(--deep-mauve);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .message-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        /* Nickname Section */
+        .nickname-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 30px;
+        }
+
+        .nickname-display {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--deep-mauve);
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--warm-beige);
+            border-radius: 2px;
+            letter-spacing: 2px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 50px 0;
+            margin-top: 60px;
+            border-top: 1px solid var(--light-gold);
+            color: var(--deep-mauve);
+            font-size: 0.95rem;
+        }
+
+        .instagram-link {
+            margin-top: 20px;
+            color: var(--dusty-rose);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .instagram-link:hover {
+            color: var(--deep-mauve);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        /* Scroll Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header fade-in">
+            <h1 class="main-title">Riona Putri Azmi</h1>
+            <p class="subtitle">Sebuah surat cinta dari Gibran</p>
+        </header>
+
+        <!-- Hero Photo -->
+        <section class="hero-section reveal">
+            <div class="hero-photo">
+                <div class="photo-caption">Kenangan yang selalu berarti</div>
+            </div>
+        </section>
+
+        <!-- Couple Information -->
+        <section class="couple-info">
+            <div class="person-card reveal">
+                <h2 class="person-name">Riona Putri Azmi</h2>
+                <p class="person-nickname">Riona</p>
+                <div class="person-details">
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Sukarara</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>SMAN 1 Jonggat</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-heart"></i>
+                        <span>Taekwondo & Mendaki Gunung</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="person-card reveal">
+                <h2 class="person-name">Muhammad Syaesar Gibran</h2>
+                <p class="person-nickname">Gibran</p>
+                <div class="person-details">
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Jelantik</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>SMAN 1 Jonggat</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-heart"></i>
+                        <span>Petualang & Pendaki Gunung</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Start Date -->
+        <section class="date-section reveal">
+            <div class="date-text">
+                <i class="fas fa-calendar-alt" style="margin-right: 10px;"></i>
+                3 November 2025
+            </div>
+        </section>
+
+        <!-- Our Story -->
+        <section class="story-section reveal">
+            <h2 class="story-title">Awal Cerita Kita</h2>
+            <div class="story-content">
+                <p>Semuanya berawal dari percakapan jujur tentang masa lalu. Saat kita berbagi cerita, kami menemukan kesamaan yang tak terduga.</p>
+                
+                <div class="highlight-quote">
+                    "Kenapa tidak dengan kamu saja? Kita cocok. Cerita kita sama. Kita diperlakukan serupa di masa lalu. Kenapa tidak memilih satu sama lain?"
+                </div>
+                
+                <p>Pertanyaan itu menjadi awal dari segalanya. Dari dua orang yang memahami rasa sakit yang sama, tumbuhlah kepercayaan. Dari kesamaan minat dan nilai, lahir ketertarikan. Dan dari keberanian untuk memulai, terciptalah hubungan ini.</p>
+            </div>
+        </section>
+
+        <!-- Nickname -->
+        <section class="nickname-section reveal">
+            <div class="nickname-display">
+                Bii
+            </div>
+            <p style="margin-top: 15px; color: var(--deep-mauve); font-style: italic;">Panggilan sayang kita berdua</p>
+        </section>
+
+        <!-- Love Message -->
+        <section class="message-section reveal">
+            <div class="message-content">
+                <h2 class="message-title">Untuk Riona,</h2>
+                
+                <p class="message-text">
+                    Dalam diamnya malam, aku menemukan diriku memikirkanmu. Tentang bagaimana senyummu bisa menerangi hari yang kelam, tentang kekuatan yang kau miliki sebagai seorang taekwondoin, dan tentang kelembutan yang kau tunjukkan saat kita bersama.
+                </p>
+                
+                <p class="message-text">
+                    Aku berterima kasih atas setiap percakapan yang kita lakukan, atas setiap gunung yang kita daki bersama — baik secara harfiah maupun metafora. Kamu mengajariku bahwa dari luka masa lalu bisa tumbuh cinta yang lebih kuat, lebih dalam.
+                </p>
+                
+                <p class="message-text">
+                    Cinta bukan tentang menemukan orang yang sempurna, tetapi tentang melihat orang yang tidak sempurna dengan cara yang sempurna. Dan itu yang kamu lakukan untukku.
+                </p>
+                
+                <p class="message-text" style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-top: 30px;">
+                    Dengan semua cinta yang aku miliki,<br>
+                    <strong>Gibran</strong>
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer reveal">
+            <p>© 2025 - Dibuat dengan ketulusan untuk Riona</p>
+            <p>Kenangan kita diabadikan di <a href="https://instagram.com/random2025.us" target="_blank" class="instagram-link">@random2025.us</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // Scroll animation
+        window.addEventListener('scroll', function() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const revealTop = reveals[i].getBoundingClientRect().top;
+                const revealPoint = 150;
+                
+                if (revealTop < windowHeight - revealPoint) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        });
+
+        // Trigger initial animation
+        window.dispatchEvent(new Event('scroll'));
+
+        // Add smooth photo loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroPhoto = document.querySelector('.hero-photo');
+            heroPhoto.style.opacity = '0';
+            heroPhoto.style.transition = 'opacity 1s ease';
+            
+            setTimeout(() => {
+                heroPhoto.style.opacity = '1';
+            }, 300);
+        });
+
+        // Add subtle hover effect to person cards
+        const cards = document.querySelectorAll('.person-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 20px 40px rgba(154, 123, 123, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
